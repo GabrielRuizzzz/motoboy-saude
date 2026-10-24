@@ -130,6 +130,6 @@ motoboy-saude/
 
 | Nome | Função |
 |---|---|
-| [Nome 1] | [função] |
-| [Nome 2] | [função] |
-| [Nome 3] | [função] |
+| Gabriel Ruiz de Farias | Montar e Planejar |
+| David Kenzo Iamaguti | Montar e Idealizar |
+| Gustavo Florencio dos Anjos | Montar e apresentar |
