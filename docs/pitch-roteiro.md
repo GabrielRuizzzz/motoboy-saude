@@ -1,7 +1,8 @@
 # Pitch inicial — Motoboy Saúde
 
 **Duração:** cerca de 3 minutos (pode ser ampliado para 5 minutos na apresentação final)
-**Apresentadores:** [Nome 1], [Nome 2], [Nome 3]
+**Apresentadores:** Gabriel Ruiz de Farias, Gustavo Florencio dos Anjos e David Kenzo Iamaguti
+**Professor Mentor:** Robson Carmo · **Disciplina:** Linguagens Formais e Autômatos
 
 ---
 
@@ -20,19 +21,19 @@
 
 ## Roteiro falado
 
-**[Pessoa 1] — Slides 1 e 2 (cerca de 45 segundos)**
+**Gabriel — Slides 1 e 2 (cerca de 45 segundos)**
 
-"Boa tarde. Somos [nomes], da FMU, e apresentamos o **Motoboy Saúde**, um aplicativo de saúde e segurança para motoboys, dentro do ODS 3, Saúde e Bem-Estar.
+"Boa tarde. Somos Gabriel, Gustavo e David, da FMU, e apresentamos o **Motoboy Saúde**, um aplicativo de saúde e segurança para motoboys, dentro do ODS 3, Saúde e Bem-Estar.
 
 Todo dia, milhares de motoboys passam horas no trânsito para entregar o que a gente pede. Mas quem cuida deles? Segundo o Atlas da Violência, as mortes de motociclistas no Brasil subiram de 12 mil para 13,5 mil em apenas um ano, e cada acidente também pesa no SUS."
 
-**[Pessoa 2] — Slides 3 e 4 (cerca de 1 minuto e 15 segundos)**
+**Gustavo — Slides 3 e 4 (cerca de 1 minuto e 15 segundos)**
 
 "Para entender o problema de perto, perguntamos a 19 motoboys. Quase um terço, 31,6%, já sofreu acidente trabalhando. Mais da metade sente dor lombar e estresse ou ansiedade. E 4 de cada 10 se automedicam, ignoram ou adiam o atendimento quando passam mal.
 
 Por isso criamos o Motoboy Saúde, com quatro funções, escolhidas a partir do que eles pediram: lembretes de pausa e água, um botão de emergência com localização, um mapa com postos de saúde e pontos de apoio e descanso, e dicas curtas de saúde e alimentação. E 94,7% disseram que usariam o aplicativo."
 
-**[Pessoa 3] — Slides 5 e 6 (cerca de 1 minuto)**
+**David — Slides 5 e 6 (cerca de 1 minuto)**
 
 "Vamos construir o app como um PWA, que se instala direto no celular, sem depender de loja. Usamos React, Firebase e mapas abertos, com dados públicos do DATASUS e do CNES, o cadastro nacional de estabelecimentos de saúde.
 
