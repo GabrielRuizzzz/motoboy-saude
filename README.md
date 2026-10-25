@@ -7,8 +7,9 @@
 > Aplicativo de saúde e segurança para motoboys e entregadores de moto.
 
 **Projeto integrador FMU Tech Inovação · ODS 3 — Saúde e Bem-Estar**
-**Equipe:** [Nome 1], [Nome 2], [Nome 3]
-**Professor Mentor:** [Nome]
+**Equipe:** Gabriel Ruiz de Farias, Gustavo Florencio dos Anjos e David Kenzo Iamaguti
+**Professor Mentor:** Robson Carmo
+**Disciplina:** Linguagens Formais e Autômatos
 **Status:** 🟡 Checkpoint 1 — Ideação
 
 ---
@@ -148,6 +149,6 @@ motoboy-saude/
 
 | Nome | Função |
 |---|---|
-| [Nome 1] | [função] |
-| [Nome 2] | [função] |
-| [Nome 3] | [função] |
+| Gabriel Ruiz de Farias | Montar e planejar |
+| Gustavo Florencio dos Anjos | Montar e apresentar |
+| David Kenzo Iamaguti | Montar e idealizar |
