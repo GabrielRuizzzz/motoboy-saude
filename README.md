@@ -7,8 +7,8 @@
 > Aplicativo de saúde e segurança para motoboys e entregadores de moto.
 
 **Projeto integrador FMU Tech Inovação · ODS 3 — Saúde e Bem-Estar**
-**Equipe:** Gabriel Ruiz de Farias, Gustavo Florencio dos Anjos, David Kenzo Iamaguti
-**Professor Mentor:** Robson Carmo
+**Equipe:** [Nome 1], [Nome 2], [Nome 3]
+**Professor Mentor:** [Nome]
 **Status:** 🟡 Checkpoint 1 — Ideação
 
 ---
@@ -44,20 +44,35 @@ Motoboys passam o dia exposto ao trânsito, em jornadas longas e sob pressão po
 
 O **Motoboy Saúde** é um app que acompanha a saúde e a segurança do motoboy durante o trabalho.
 
-**Funcionalidades candidatas ao MVP** *(serão validadas com usuários)*:
+**Funcionalidades do MVP** *(definidas a partir da pesquisa com motoboys)*:
 
-- ⏱️ Lembretes de pausa, hidratação e descanso
-- 🆘 Botão de emergência com localização para contatos e SAMU
-- 🏥 Mapa de UBS, UPAs e hospitais próximos
-- 📋 Registro de acidentes e sintomas (dor, cansaço, estresse)
-- 📊 Painel simples de saúde semanal
+- ⏱️ Lembretes de pausa e água
+- 🆘 Botão de emergência com ligação para o SAMU (192) e envio de localização
+- 🏥 Mapa de UBS, UPAs, hospitais e pontos de apoio e descanso
+- 💡 Dicas de saúde e alimentação
+
+**Fase 2:** registro de acidentes e sintomas, painel semanal de saúde e parcerias com benefícios.
+
+Detalhes em [docs/requisitos.md](docs/requisitos.md).
+
+**Modelo de negócio:** app gratuito para o motoboy, com receita de parcerias com restaurantes, farmácias, convênios e clínicas.
 
 ---
 
 ## 3. Validação com usuários
 
-- [ ] Questionário com 5 a 10 motoboys
-- [ ] Resultados e conclusões (a preencher)
+Questionário online com **19 motoboys** (24/10/2026). Análise completa em [docs/pesquisa-usuarios.md](docs/pesquisa-usuarios.md).
+
+| Resultado | Valor |
+|---|---|
+| Já sofreram acidente trabalhando | 31,6% |
+| Sentem dor lombar com frequência | 57,9% |
+| Sentem estresse ou ansiedade | 52,6% |
+| Trabalham de 11 a 14 horas por dia | 31,6% |
+| Usariam o app (sim ou talvez) | 94,7% |
+| Pagariam algo pelo app | 47,4% |
+
+> Amostra pequena e por conveniência: os resultados indicam tendências.
 
 ---
 
@@ -98,7 +113,9 @@ O **Motoboy Saúde** é um app que acompanha a saúde e a segurança do motoboy 
 
 ## 6. Pitch inicial
 
-[Link do vídeo ou slides em `/docs/pitch`]
+Roteiro e estrutura dos slides em [docs/pitch-roteiro.md](docs/pitch-roteiro.md).
+
+Slides: [adicionar link]
 
 ---
 
@@ -118,10 +135,11 @@ O **Motoboy Saúde** é um app que acompanha a saúde e a segurança do motoboy 
 motoboy-saude/
 ├── README.md
 ├── docs/
-│   ├── problema.md
+│   ├── pesquisa-usuarios.md
 │   ├── requisitos.md
-│   ├── identidade-visual/
-│   └── pitch/
+│   ├── pitch-roteiro.md
+│   └── identidade-visual/
+│       └── logo.svg
 ├── src/
 └── LICENSE
 ```
@@ -130,6 +148,6 @@ motoboy-saude/
 
 | Nome | Função |
 |---|---|
-| Gabriel Ruiz de Farias | Montar e Planejar |
-| David Kenzo Iamaguti | Montar e Idealizar |
-| Gustavo Florencio dos Anjos | Montar e apresentar |
+| [Nome 1] | [função] |
+| [Nome 2] | [função] |
+| [Nome 3] | [função] |
