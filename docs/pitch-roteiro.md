@@ -40,12 +40,3 @@ Por isso criamos o Motoboy Saúde, com quatro funções, escolhidas a partir do 
 O app será gratuito para o motoboy, porque mais da metade só usaria de graça. A receita virá de parcerias com restaurantes, farmácias e convênios, algo que os próprios motoboys pediram.
 
 No próximo passo, entregamos o protótipo funcional. O Motoboy Saúde quer ajudar quem trabalha na rua a rodar com saúde e voltar pra casa. Obrigado!"
-
----
-
-## Dicas para a apresentação
-
-- Treinem uma vez em voz alta, cronometrando
-- Mostrem o logo e as cores da identidade visual em todos os slides
-- Usem poucos textos por slide e deixem os números grandes
-- Tenham o link do repositório no último slide: `github.com/[usuario]/motoboy-saude`
