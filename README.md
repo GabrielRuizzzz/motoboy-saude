@@ -121,7 +121,7 @@ Questionário online com **19 motoboys** (24/10/2026). Análise completa em [doc
 
 Roteiro e estrutura dos slides em [docs/pitch-roteiro.md](docs/pitch-roteiro.md).
 
-Slides: [Baixar os slides (PPTX)](docs/Motoboy%20Sa%C3%BAde%20%E2%80%94%20Pitch%20inicial.pptx)
+Slides: [Baixar os slides (PPTX)](docs/Motoboy_Sa%C3%BAde%E2%80%94Pitch_inicial.pptx)
 
 ---
 
@@ -147,7 +147,7 @@ motoboy-saude/
 │   ├── pesquisa-usuarios.md
 │   ├── pitch-roteiro.md
 │   ├── requisitos.md
-│   ├── Motoboy Saúde — Pitch inicial.pptx
+│   ├── Motoboy_Saúde—Pitch_inicial.pptx
 │   └── identidade-visual/
 │       └── logo.svg
 ├── src/
