@@ -10,6 +10,7 @@ Escopo definido a partir da pesquisa com 19 motoboys (ver [pesquisa-usuarios.md]
 | Botão de emergência com localização | Painel semanal de saúde |
 | Mapa de UBS/UPA/hospitais e pontos de apoio | Parcerias com benefícios (descontos) |
 | Dicas de saúde e alimentação | Notificações com o app fechado |
+| Painel semanal da região (dados públicos) | Painel individual de saúde |
 | Login simples | Versão para lojas (Android/iOS) |
 
 ## 2. Requisitos funcionais
@@ -17,12 +18,14 @@ Escopo definido a partir da pesquisa com 19 motoboys (ver [pesquisa-usuarios.md]
 | ID | Requisito | Prioridade | Base na pesquisa |
 |---|---|---|---|
 | RF01 | O app deve enviar lembretes de pausa e de beber água em intervalos configuráveis | Alta | 42,1% pediram |
-| RF02 | O app deve ter um botão de emergência que abre a ligação para o SAMU (192) e envia a localização por WhatsApp | Alta | 42,1% pediram |
+| RF02 | O app deve ter um botão de emergência que abre a ligação para o SAMU (192) e abre mensagem de WhatsApp com a localização e, se cadastrada, a placa para o contato de emergência (ver [lgpd.md](lgpd.md)) | Alta | 42,1% pediram; feedback do professor |
 | RF03 | O app deve mostrar em um mapa as UBS, UPAs e hospitais mais próximos | Alta | 36,8% pediram |
 | RF04 | O app deve mostrar pontos de apoio e descanso (banheiro, água, abrigo) no mapa | Média | Pedido espontâneo em 3 respostas abertas |
 | RF05 | O app deve exibir dicas curtas de saúde e alimentação | Média | 52,6% pediram (a mais votada) |
 | RF06 | O usuário deve poder criar uma conta e entrar com e-mail ou telefone | Média | Necessário para configurações |
 | RF07 | O usuário deve poder registrar acidentes e sintomas (fase 2) | Baixa | 36,8% pediram |
+| RF08 | O app deve mostrar um painel semanal da **região** do usuário (acidentes com motos, vias e horários de maior risco), com dados públicos | Média | Feedback do professor |
+| RF09 | O app deve ter tela de consentimento, página de privacidade e opção de apagar os dados | Alta | LGPD |
 
 ## 3. Requisitos não funcionais
 
@@ -31,7 +34,7 @@ Escopo definido a partir da pesquisa com 19 motoboys (ver [pesquisa-usuarios.md]
 | RNF01 | O app deve funcionar no navegador do celular e poder ser instalado na tela inicial (PWA) |
 | RNF02 | A interface deve ter botões grandes e textos claros, para uso rápido com uma mão |
 | RNF03 | O app deve ser leve e funcionar com internet fraca |
-| RNF04 | Os dados pessoais e de localização devem seguir a LGPD, com pedido de consentimento |
+| RNF04 | Os dados pessoais e de localização devem seguir a LGPD, com pedido de consentimento (ver [lgpd.md](lgpd.md)) |
 | RNF05 | Os dados de estabelecimentos de saúde devem vir de fontes públicas (CNES/DATASUS) |
 | RNF06 | O app deve ser gratuito para o motoboy |
 
