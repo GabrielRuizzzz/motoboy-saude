@@ -10,11 +10,13 @@
 **Equipe:** Gabriel Ruiz de Farias, Gustavo Florencio dos Anjos e David Kenzo Iamaguti
 **Professor Mentor:** Robson Carmo
 **Disciplina:** Linguagens Formais e Autômatos
-**Status:** 🟡 Checkpoint 1 — Ideação
+**Status:** 🟡 Checkpoint 2 — Protótipo
 
 ---
 
 ## 1. Problema
+
+> **Em números:** cerca de 500 mil entregadores por aplicativo no Brasil (IBGE, 2024). Na cidade de São Paulo, 334 motociclistas morreram no trânsito de jan. a ago./2026, recorde da série do Infosiga. Só 19,4% dos motociclistas de app têm cobertura previdenciária (IBGE, 2025). **Foco do piloto: cidade de São Paulo.** Detalhes e fontes em [docs/dados-brasil-e-sao-paulo.md](docs/dados-brasil-e-sao-paulo.md).
 
 ### Declaração do problema
 
@@ -51,12 +53,15 @@ O **Motoboy Saúde** é um app que acompanha a saúde e a segurança do motoboy 
 - 🆘 Botão de emergência com ligação para o SAMU (192) e envio de localização
 - 🏥 Mapa de UBS, UPAs, hospitais e pontos de apoio e descanso
 - 💡 Dicas de saúde e alimentação
+- 📊 Painel semanal da região (dados públicos de acidentes com motos)
 
-**Fase 2:** registro de acidentes e sintomas, painel semanal de saúde e parcerias com benefícios.
+**Fase 2:** registro de acidentes e sintomas, painel individual de saúde e parcerias com benefícios.
 
 Detalhes em [docs/requisitos.md](docs/requisitos.md).
 
-**Modelo de negócio:** app gratuito para o motoboy, com receita de parcerias com restaurantes, farmácias, convênios e clínicas.
+**Modelo de negócio:** app gratuito para o motoboy, com receita de licença para plataformas de entrega (iFood, 99, Rappi), parcerias e setor público. Veja [docs/monetizacao-e-crescimento.md](docs/monetizacao-e-crescimento.md).
+
+**Privacidade:** análise de LGPD do botão de emergência e dos dados do app em [docs/lgpd.md](docs/lgpd.md).
 
 ---
 
@@ -116,7 +121,7 @@ Questionário online com **19 motoboys** (24/10/2026). Análise completa em [doc
 
 Roteiro e estrutura dos slides em [docs/pitch-roteiro.md](docs/pitch-roteiro.md).
 
-Slides: [docs/Motoboy_Saúde—Pitch_inicial.pptx](docs/Motoboy_Saúde—Pitch_inicial.pptx).
+Slides: [Baixar os slides (PPTX)](docs/Motoboy%20Sa%C3%BAde%20%E2%80%94%20Pitch%20inicial.pptx)
 
 ---
 
@@ -124,8 +129,8 @@ Slides: [docs/Motoboy_Saúde—Pitch_inicial.pptx](docs/Motoboy_Saúde—Pitch_i
 
 | Entrega | Período | Status |
 |---|---|---|
-| Checkpoint 1 — Ideação | 19/10 a 30/10 | 🟡 Em andamento |
-| Checkpoint 2 — Protótipo + vídeo de demonstração | 09/11 a 27/11 | ⚪ Pendente |
+| Checkpoint 1 — Ideação | 19/10 a 30/10 | ✅ Concluído |
+| Checkpoint 2 — Protótipo + vídeo de demonstração | 09/11 a 27/11 | 🟡 Em andamento |
 | Apresentação final (pitch de 5 min) | 07/12 e 08/12 | ⚪ Pendente |
 
 ---
@@ -136,9 +141,13 @@ Slides: [docs/Motoboy_Saúde—Pitch_inicial.pptx](docs/Motoboy_Saúde—Pitch_i
 motoboy-saude/
 ├── README.md
 ├── docs/
+│   ├── dados-brasil-e-sao-paulo.md
+│   ├── lgpd.md
+│   ├── monetizacao-e-crescimento.md
 │   ├── pesquisa-usuarios.md
-│   ├── requisitos.md
 │   ├── pitch-roteiro.md
+│   ├── requisitos.md
+│   ├── Motoboy Saúde — Pitch inicial.pptx
 │   └── identidade-visual/
 │       └── logo.svg
 ├── src/
