@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motoboy Saúde — Protótipo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#F5F7FA;--sf:#FFFFFF;--tx:#1F2933;--mu:#5B6670;--pr:#00A86B;--ac:#FF7A00;--sos:#D7263D;--bd:#D9DEE3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12181E;--sf:#1F2933;--tx:#F5F7FA;--mu:#A9B4BE;--pr:#00D68F;--bd:#33424F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12181E;--sf:#1F2933;--tx:#F5F7FA;--mu:#A9B4BE;--pr:#00D68F;--bd:#33424F;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Poppins,Arial,sans-serif;font-size:16px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sf);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--sf);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:10px;padding:10px 16px}
+header b{font-weight:800;font-size:17px;line-height:1.1}header b span{color:var(--pr)}
+main{max-width:480px;margin:0 auto;padding:16px 16px 96px}
+.view{display:none}.view.on{display:block}
+h2{font-size:22px;font-weight:800;margin:4px 0 12px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:16px;margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:16px}
+.mu{color:var(--mu);font-size:14px}
+button,.btn{font:inherit;font-weight:600;border:0;border-radius:12px;padding:12px 16px;background:var(--pr);color:#fff;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn2{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+.sos{width:100%;background:var(--sos);font-size:22px;font-weight:800;padding:22px;border-radius:18px;margin-bottom:14px}
+input,select{font:inherit;width:100%;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);margin:4px 0 10px}
+label{font-size:14px;font-weight:600}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
+.big{font-size:44px;font-weight:800;line-height:1.1}
+.g{color:var(--pr)}.o{color:var(--ac)}.r{color:var(--sos)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bar{height:12px;border-radius:8px;background:var(--bd);overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--ac)}
+.tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--ac);color:#1F2933}
+.place{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px solid var(--bd)}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:9;background:var(--sf);border-top:1px solid var(--bd);display:flex;justify-content:center;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px))}
+nav div{display:flex;width:100%;max-width:480px}
+nav a{flex:1;text-align:center;font-size:11px;font-weight:600;color:var(--mu);text-decoration:none;padding:8px 0 2px}
+nav a span{display:block;font-size:22px}nav a.on{color:var(--pr)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:20;display:none;align-items:flex-end;justify-content:center}
+.ov.on{display:flex}
+.sheet{background:var(--sf);width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px));max-height:90%;overflow:auto}
+#alert{position:fixed;left:12px;right:12px;top:calc(70px + env(safe-area-inset-top,0px));z-index:30;max-width:456px;margin:auto;background:var(--ac);color:#1F2933;border-radius:14px;padding:14px;font-weight:600;display:none;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+#alert.on{display:block}
+a{color:var(--pr)}
+</style>
+</head>
+<body>
+<header>
+<svg viewBox="0 0 100 116" width="30" height="35" aria-hidden="true"><path d="M50 6 L92 20 V52 C92 78 74 98 50 110 C26 98 8 78 8 52 V20 Z" fill="#00A86B"/><polyline points="20,60 36,60 44,38 56,80 64,60 72,60" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="60" r="5" fill="#FF7A00"/></svg>
+<b>MOTOBOY <span>SAÚDE</span></b>
+</header>
+<div id="alert" role="alert"><div id="altx"></div><button style="margin-top:10px;background:#1F2933" id="altok">Feito ✓</button></div>
+
+<main>
+<section class="view" id="v-inicio">
+<button class="sos" id="sosBtn">🆘 EMERGÊNCIA</button>
+
+<div class="card">
+<h3>⏱️ Lembretes de pausa e água</h3>
+<p class="mu">Alterna entre beber água e fazer uma pausa. O lembrete funciona com o app aberto.</p>
+<label for="intv">Intervalo</label>
+<select id="intv"><option value="1">1 minuto (teste da demonstração)</option><option value="30">A cada 30 minutos</option><option value="60" selected>A cada 1 hora</option><option value="120">A cada 2 horas</option></select>
+<div class="big g" id="cd">--:--</div>
+<p class="mu" id="cdl">Lembretes desligados</p>
+<button id="rmBtn" style="width:100%">Ligar lembretes</button>
+</div>
+
+<div class="card">
+<h3>👤 Meus dados de emergência</h3>
+<p class="mu">Opcionais. Ficam só neste aparelho e podem ser apagados em Privacidade.</p>
+<label for="ph">WhatsApp do familiar (com DDD)</label>
+<input id="ph" inputmode="tel" placeholder="11999999999" autocomplete="off">
+<label for="pl">Placa da moto (opcional)</label>
+<input id="pl" placeholder="ABC1D23" maxlength="8" autocomplete="off">
+</div>
+</section>
+
+<section class="view" id="v-mapa">
+<h2>🏥 Mapa de saúde e apoio</h2>
+<div class="card">
+<h3>Encontre perto de você</h3>
+<p class="mu">Abre o Google Maps já buscando a partir da sua localização.</p>
+<div class="row">
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=UBS">UBS</a>
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=UPA+24h">UPA 24h</a>
+</div>
+<div class="row" style="margin-top:10px">
+<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=hospital">Hospital</a>
+<a class="btn" style="background:var(--ac);color:#1F2933" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ponto+de+apoio+motoboy">Ponto de apoio</a>
+</div>
+</div>
+<div class="card">
+<h3>Como ficará na versão final <span class="tag">DEMO</span></h3>
+<p class="mu">Lista ordenada por distância, com dados do CNES e pontos de apoio. Os itens abaixo são fictícios, só para a demonstração.</p>
+<div class="place"><div>🏥 UBS (exemplo)<br><span class="mu">Atende 7h às 19h</span></div><b>0,6 km</b></div>
+<div class="place"><div>🚑 UPA 24h (exemplo)<br><span class="mu">Aberta agora</span></div><b>1,4 km</b></div>
+<div class="place"><div>☕ Ponto de apoio (exemplo)<br><span class="mu">Banheiro, água e abrigo</span></div><b>1,9 km</b></div>
+<div class="place"><div>🏨 Hospital (exemplo)<br><span class="mu">Pronto-socorro 24h</span></div><b>2,8 km</b></div>
+</div>
+</section>
+
+<section class="view" id="v-regiao">
+<h2>📊 Painel da região</h2>
+<p class="mu">Cidade de São Paulo · motociclistas · jan. a ago./2026</p>
+<div class="grid">
+<div class="card"><div class="big r">334</div><div class="mu">mortes de motociclistas</div></div>
+<div class="card"><div class="big o">+6,4%</div><div class="mu">sobre o mesmo período de 2025</div></div>
+<div class="card"><div class="big">≈9,6</div><div class="mu">mortes por semana (média)</div></div>
+<div class="card"><div class="big g">48</div><div class="mu">em julho, recorde para o mês</div></div>
+</div>
+<div class="card">
+<h3>Motos nos acidentes graves ou fatais</h3>
+<div class="bar"><i style="width:67.3%"></i></div>
+<b class="o">67,3%</b> <span class="mu">dos acidentes graves ou fatais da capital envolveram motos.</span>
+</div>
+<p class="mu">Fonte: Infosiga SP, divulgado pela imprensa (set./2026). A média semanal é calculada (334 mortes em cerca de 35 semanas). O protótipo usa números fixos; a versão final lê os dados abertos do Infosiga.</p>
+</section>
+
+<section class="view" id="v-dicas">
+<h2>💡 Dica de saúde</h2>
+<div class="card"><div style="font-size:42px" id="tIc"></div><h3 id="tTt"></h3><p id="tTx"></p></div>
+<button id="tNx" class="btn2 btn" style="width:100%">Próxima dica</button>
+<p class="mu" style="margin-top:12px">Conteúdo educativo geral. Não substitui orientação de um profissional de saúde.</p>
+</section>
+
+<section class="view" id="v-privacidade">
+<h2>🔒 Privacidade (LGPD)</h2>
+<div class="card">
+<h3>O que o app usa</h3>
+<p class="mu">Localização: só quando você aciona o botão de emergência ou abre o mapa. Placa e contato: opcionais, ficam neste aparelho. Nada é enviado a plataformas de entrega ou a terceiros.</p>
+<p class="mu">Você pode apagar tudo a qualquer momento.</p>
+<button id="wipe" class="btn2 btn" style="width:100%;color:var(--sos)">Apagar meus dados</button>
+</div>
+<div class="card"><h3>Aviso</h3><p class="mu">O botão de emergência é um apoio e não substitui o atendimento do SAMU. Em caso de acidente grave, ligue 192.</p></div>
+<p class="mu">Protótipo acadêmico · FMU Tech Inovação · ODS 3</p>
+</section>
+</main>
+
+<nav><div>
+<a href="#inicio" data-v="inicio"><span>🏠</span>Início</a>
+<a href="#mapa" data-v="mapa"><span>🏥</span>Mapa</a>
+<a href="#regiao" data-v="regiao"><span>📊</span>Região</a>
+<a href="#dicas" data-v="dicas"><span>💡</span>Dicas</a>
+<a href="#privacidade" data-v="privacidade"><span>🔒</span>Privacidade</a>
+</div></nav>
+
+<div class="ov" id="consent"><div class="sheet">
+<h2>Bem-vindo ao Motoboy Saúde</h2>
+<p class="mu">Para funcionar, o app pode usar sua localização no botão de emergência e no mapa. Os dados ficam neste aparelho, e você pode apagá-los quando quiser.</p>
+<label style="display:flex;gap:10px;font-weight:400"><input type="checkbox" id="c1" style="width:auto;margin-top:6px"> Li e aceito o uso dos meus dados como descrito (obrigatório)</label>
+<label style="display:flex;gap:10px;font-weight:400"><input type="checkbox" id="c2" style="width:auto;margin-top:6px"> Permito usar minha localização em emergências</label>
+<button id="cOk" style="width:100%;margin-top:8px;opacity:.5">Continuar</button>
+</div></div>
+
+<div class="ov" id="sos"><div class="sheet">
+<h2 class="r">🆘 Pedir ajuda</h2>
+<a class="btn" style="background:var(--sos);width:100%;font-size:20px;margin-bottom:10px" href="tel:192">📞 Ligar para o SAMU (192)</a>
+<a class="btn" id="wa" style="width:100%;font-size:18px;margin-bottom:10px" target="_blank" rel="noopener" href="#">💬 Avisar família no WhatsApp</a>
+<p class="mu" id="gps">Localização: aguardando…</p>
+<p class="mu">Este botão é um apoio e não substitui o atendimento do SAMU.</p>
+<button id="sosX" class="btn2 btn" style="width:100%">Fechar</button>
+</div></div>
+
+<script>
+(function(){
+var mem={};
+function get(k,d){try{var v=localStorage.getItem(k);return v===null?(k in mem?mem[k]:d):JSON.parse(v)}catch(e){return k in mem?mem[k]:d}}
+function set(k,v){mem[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function $(s){return document.querySelector(s)}
+var views=["inicio","mapa","regiao","dicas","privacidade"];
+function show(h){if(views.indexOf(h)<0)h="inicio";
+views.forEach(function(v){$("#v-"+v).classList.toggle("on",v===h)});
+document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.dataset.v===h)});window.scrollTo(0,0)}
+function route(){show((location.hash||"#inicio").slice(1))}
+window.addEventListener("hashchange",route);
+document.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();show(a.dataset.v);try{history.replaceState(null,"","#"+a.dataset.v)}catch(x){}})});
+route();
+
+/* consentimento */
+var cs=get("consent",null);
+function chk(){$("#cOk").style.opacity=$("#c1").checked?1:.5}
+if(!cs)$("#consent").classList.add("on");
+$("#c1").onchange=chk;
+$("#cOk").onclick=function(){if(!$("#c1").checked)return;set("consent",{loc:$("#c2").checked,ts:Date.now()});$("#consent").classList.remove("on")};
+
+/* dados de emergência */
+$("#ph").value=get("phone","");$("#pl").value=get("plate","");
+$("#ph").oninput=function(){set("phone",this.value.replace(/\D/g,""))};
+$("#pl").oninput=function(){this.value=this.value.toUpperCase();set("plate",this.value)};
+
+/* SOS */
+var pos=null;
+function waLink(){var p=get("phone",""),pl=get("plate","");
+var t="🆘 Preciso de ajuda. Sofri um acidente."+(pos?" Minha localização: https://maps.google.com/?q="+pos.lat+","+pos.lon:" Não consegui obter minha localização.")+(pl?" Placa da moto: "+pl+".":"");
+$("#wa").href="https://wa.me/"+(p?"55"+p:"")+"?text="+encodeURIComponent(t)}
+function locate(){pos=null;var c=get("consent",null);
+if(!c||!c.loc){$("#gps").textContent="Localização desativada. Sem ela, a mensagem vai sem o local.";waLink();return}
+$("#gps").textContent="Localização: obtendo…";waLink();
+if(!navigator.geolocation){$("#gps").textContent="Este aparelho não oferece localização.";return}
+navigator.geolocation.getCurrentPosition(function(g){pos={lat:g.coords.latitude.toFixed(5),lon:g.coords.longitude.toFixed(5)};$("#gps").textContent="Localização obtida ✓";waLink()},function(){$("#gps").textContent="Não foi possível obter a localização.";waLink()},{enableHighAccuracy:true,timeout:8000})}
+$("#sosBtn").onclick=function(){$("#sos").classList.add("on");locate()};
+$("#sosX").onclick=function(){$("#sos").classList.remove("on")};
+
+/* lembretes */
+var msgs=["💧 Hora de beber água! Dê uns goles antes de seguir.","🛑 Faça uma pausa: desça da moto, alongue as costas e os pulsos."];
+var timer=null,left=0,n=0,on=false;
+$("#intv").value=get("intv","60");
+$("#intv").onchange=function(){set("intv",this.value);if(on)startCd()};
+function fmt(s){var m=Math.floor(s/60),r=s%60;return (m<10?"0":"")+m+":"+(r<10?"0":"")+r}
+function beep(){try{var C=window.AudioContext||window.webkitAudioContext,a=new C(),o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=880;g.gain.value=.15;o.start();setTimeout(function(){o.stop();a.close()},350)}catch(e){}}
+function fire(){$("#altx").textContent=msgs[n%2];n++;$("#alert").classList.add("on");beep();try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}}
+function startCd(){clearInterval(timer);left=parseInt($("#intv").value,10)*60;$("#cd").textContent=fmt(left);
+timer=setInterval(function(){left--;if(left<=0){fire();left=parseInt($("#intv").value,10)*60}$("#cd").textContent=fmt(left)},1000)}
+$("#rmBtn").onclick=function(){on=!on;if(on){startCd();this.textContent="Desligar lembretes";$("#cdl").textContent="Próximo lembrete em:"}else{clearInterval(timer);this.textContent="Ligar lembretes";$("#cd").textContent="--:--";$("#cdl").textContent="Lembretes desligados"}};
+$("#altok").onclick=function(){$("#alert").classList.remove("on")};
+
+/* dicas */
+var tips=[["💧","Beba água com frequência","Leve uma garrafa na moto e beba alguns goles a cada parada. A desidratação aumenta o cansaço e a sonolência."],["🧘","Alongue as costas","A cada pausa, faça alguns minutos de alongamento de lombar, pescoço e pulsos para aliviar a tensão da pilotagem."],["🍎","Prefira refeições leves","Comida muito pesada antes de pilotar pode dar sono. Frutas, sanduíches simples e água ajudam a manter a energia."],["😴","Respeite o sono","Cansaço e sono atrapalham a atenção no trânsito. Se estiver sonolento, pare em um local seguro e descanse."],["🪖","Capacete e equipamentos","Use sempre capacete bem ajustado, viseira limpa e luvas. Revise os freios e os pneus com regularidade."],["🧠","Cuide da cabeça","Jornada longa e pressão por tempo geram estresse. Respire fundo nas pausas e converse com alguém de confiança."],["☀️","Proteja-se do sol","Use protetor solar e roupas adequadas nos dias de calor. Hidrate-se mais quando estiver quente."],["🩺","Procure atendimento","Dor que não passa, formigamento nas mãos ou tontura merecem avaliação na UBS. Não ignore os sinais do corpo."]];
+var ti=new Date().getDate()%tips.length;
+function tip(){var t=tips[ti];$("#tIc").textContent=t[0];$("#tTt").textContent=t[1];$("#tTx").textContent=t[2]}
+$("#tNx").onclick=function(){ti=(ti+1)%tips.length;tip()};tip();
+
+/* apagar dados */
+$("#wipe").onclick=function(){if(!confirm("Apagar todos os seus dados deste aparelho?"))return;mem={};try{localStorage.clear()}catch(e){}$("#ph").value="";$("#pl").value="";$("#consent").classList.add("on");$("#c1").checked=false;$("#c2").checked=false;chk()};
+})();
+</script>
+</body>
+</html>
