@@ -11,6 +11,7 @@
 **Professor Mentor:** Robson Carmo
 **Disciplina:** Linguagens Formais e Autômatos
 **Status:** 🟡 Checkpoint 2 — Protótipo
+**Protótipo online:** https://gabrielruizzzz.github.io/motoboy-saude/
 
 ---
 
@@ -84,17 +85,29 @@ Questionário online com **19 motoboys** (24/10/2026). Análise completa em [doc
 
 ## 4. Tecnologias
 
-| Camada | Tecnologia |
-|---|---|
-| Aplicativo | PWA (app web instalável no celular) com React + Vite |
-| Estilo | Tailwind CSS |
-| Backend e banco de dados | Firebase (Authentication + Firestore) |
-| Mapas | Leaflet + OpenStreetMap (gratuito, sem chave de API) |
-| Localização e emergência | Geolocalização do navegador + link `tel:192` (SAMU) + compartilhamento da localização por WhatsApp |
-| Hospedagem | GitHub Pages ou Vercel |
-| Dados públicos | DATASUS, Infosiga SP, CNES (estabelecimentos de saúde) |
-| Design | Figma |
-| Versionamento | Git + GitHub |
+| Camada | Protótipo (hoje) | Versão final (planejada) |
+|---|---|---|
+| Aplicativo | PWA em HTML, CSS e JavaScript puro | PWA com React + Vite e Tailwind CSS |
+| Dados e login | Armazenamento local do aparelho (`localStorage`) | Firebase (Authentication + Firestore) |
+| Mapas | Busca por link no Google Maps | Leaflet + OpenStreetMap, com dados do CNES |
+| Localização e emergência | Geolocalização do navegador, link `tel:192` (SAMU) e mensagem de WhatsApp | Igual, com integração de contatos salvos |
+| Painel da região | Números fixos do Infosiga SP | Leitura dos dados abertos do Infosiga SP |
+| Hospedagem | GitHub Pages (pasta raiz do repositório) | GitHub Pages ou Vercel |
+| Design | Logo em SVG e paleta de cores | Telas finais no Figma |
+
+**Versionamento:** Git + GitHub.
+
+**Arquitetura:** diagrama, componentes e fluxos em [docs/arquitetura.md](docs/arquitetura.md).
+
+### Como testar o protótipo
+
+1. Abra **https://gabrielruizzzz.github.io/motoboy-saude/** no celular ou no computador (sem login).
+2. Aceite o consentimento e preencha o WhatsApp de um familiar e a placa (opcionais).
+3. Em Lembretes, escolha "1 minuto (teste da demonstração)" e ligue para ver o aviso.
+4. Toque em Emergência para ver a ligação para o 192 e a mensagem pronta de WhatsApp.
+5. Navegue pelas abas Mapa, Região, Dicas e Privacidade.
+
+O código do protótipo está em [index.html](index.html), um único arquivo. Os dados do mapa de exemplo são fictícios e o painel da região usa números fixos (Infosiga SP, jan. a ago./2026); veja os limites em [docs/arquitetura.md](docs/arquitetura.md).
 
 ---
 
@@ -140,18 +153,21 @@ Slides: [Baixar os slides (PPTX)](docs/Motoboy_Sa%C3%BAde%E2%80%94Pitch_inicial.
 ```
 motoboy-saude/
 ├── README.md
-├── docs/
-│   ├── dados-brasil-e-sao-paulo.md
-│   ├── lgpd.md
-│   ├── monetizacao-e-crescimento.md
-│   ├── pesquisa-usuarios.md
-│   ├── pitch-roteiro.md
-│   ├── requisitos.md
-│   ├── Motoboy_Saúde—Pitch_inicial.pptx
-│   └── identidade-visual/
-│       └── logo.svg
+├── LICENSE
+├── index.html                        (protótipo do app, publicado no GitHub Pages)
 ├── src/
-└── LICENSE
+│   └── README.md                     (código da versão final entrará aqui)
+└── docs/
+    ├── arquitetura.md
+    ├── dados-brasil-e-sao-paulo.md
+    ├── lgpd.md
+    ├── monetizacao-e-crescimento.md
+    ├── pesquisa-usuarios.md
+    ├── pitch-roteiro.md
+    ├── requisitos.md
+    ├── Motoboy_Saúde—Pitch_inicial.pptx
+    └── identidade-visual/
+        └── logo.svg
 ```
 
 ## 9. Equipe
